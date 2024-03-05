@@ -1,4 +1,7 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require('mongoose');
+
+const Schema = mongoose.Schema;
+const model = mongoose.model;
 
 const businessSchema = new Schema({
     business_name: {
@@ -9,7 +12,7 @@ const businessSchema = new Schema({
         type: Number,
         required: true
     },
-    Catagory: {
+    catagory: {
         type: String,
         required: true
     },
@@ -21,4 +24,5 @@ const businessSchema = new Schema({
     }
 }, { timestamps: true });
 
-export default Business = model('business', businessSchema);
+// Create and export the Business model using module.exports
+module.exports = model('business', businessSchema);
